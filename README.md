@@ -22,15 +22,13 @@ pip install themed-print
 
 ## Usage
 
-```python
-from themed_print import print, show_status
-```
-
----
+***
 
 ### Pretty Print (Drop-in Replacement)
 
 ```python
+from themed_print import print
+
 print({
     "name": "Alice",
     "values": [1, 2, 3],
@@ -54,13 +52,14 @@ Arguments:
 | `sep`            | str  | Separator between values |
 | `end`            | str  | Line ending              |
 
----
+***
 
 ### Status Spinner Decorator
 
 Run a function with a live spinner:
 
 ```python
+from themed_print import show_status
 import time
 
 @show_status("Running task…", exit_message="Done ✔")
