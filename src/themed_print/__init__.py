@@ -1,1 +1,1 @@
-from .main import print, show_status
+from .main import print, show_status, DTypeRegexHighlighter, CONSOLE

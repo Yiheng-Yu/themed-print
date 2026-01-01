@@ -6,12 +6,12 @@ Created on Mon Dec  8 12:18:41 2025
 @author: Yiheng Yu
 """
 
-from functools import wraps
+from functools import wraps, partial
 from typing import Any, Optional
 
 from rich import markup, pretty
 from rich.console import Console, ConsoleRenderable, List, RenderHook
-from rich.highlighter import RegexHighlighter
+from rich.highlighter import RegexHighlighter, Highlighter
 from rich.text import Text
 
 from .config import DEFAULT_THEME
@@ -72,21 +72,22 @@ class DTypeRegexHighlighter(RegexHighlighter):
     ]
 
 ### Timestamp
-def format_timestamp(input_datetime):
+def format_timestamp(highlighter_:Highlighter, input_datetime):
     """Formatting function for timestamp used in rich.Console.log"""
     formatted = input_datetime.strftime("[%X]")
     formatted = Text(formatted)
-    return DEFAULT_HIGHLIGHTER(formatted)
+    return highlighter_(formatted)
 
 ### Console instance
 HIGHLIGHTER = DTypeRegexHighlighter()
-theme = DEFAULT_THEME
+format_timestamp_ = partial(format_timestamp, HIGHLIGHTER)
+theme = DEFAULT_THEME  # TODO: make themes customisable
 CONSOLE = Console(
     color_system="truecolor",
     highlight=True,
     highlighter=HIGHLIGHTER,
     theme=theme,
-    log_time_format=format_timestamp,
+    log_time_format=format_timestamp_,
     log_path=False,
 )
 
@@ -137,7 +138,7 @@ def show_status(
     Decorator that runs the decorated function with spinner (like npm)
 
     If the decorated function is an instance method, the decorator first checks
-    for an instance attribute named `_should_log`. If this attribute exists and
+    for an instance attribute named `_show_status`. If this attribute exists and
     is set to `False`, the function is executed normally without displaying
     the status spinner or exit message.
 
@@ -169,12 +170,12 @@ def show_status(
     def wrapper(func):
         @wraps(func)
         def run_as_status(*args, **kwargs):
-            # If the input func is a instance method, we first check if the instance attrbute '_should_log'
-            # skip logging output if _should_log attribute set to be False.
+            # If the input func is a instance method, we first check if the instance attrbute '_show_status'
+            # skip logging output if _show_status attribute set to be False.
             # ** for instance methods, the first inputs would always be 'self'
             if args:
                 instance = args[0]
-                should_log = getattr(instance, "_should_log", True)
+                should_log = getattr(instance, "_show_status", True)
             else:
                 should_log = True
 

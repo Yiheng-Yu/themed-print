@@ -1,1 +1,1 @@
-themed-print
+themed_print
