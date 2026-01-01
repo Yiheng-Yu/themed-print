@@ -7,27 +7,6 @@ The main contens are:
 * A decorator for running functions with a spinner/status indicator like ```npm```
 
 ***
-## Usage
-
-### ✨ Pretty Printing
-```print```: A drop-in replacement for built-in `print`, prints colourful repr with indentation & guidelines 
-
-
-### 🔄 Status Decorator
-```show_status```
-Runs decorated function with status spinner like ```npm```
-Example usage:
-```
-@show_status("running", exit_message="finished")
-def f():
-    for i in range(3):
-        time.sleep(0.5)
-        print('loop', i)
-f()
-```
-
-* Automatically disabled for instances with attribute `_show_status = False`
-
 ---
 
 ## Installation
