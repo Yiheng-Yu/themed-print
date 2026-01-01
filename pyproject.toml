@@ -2,6 +2,8 @@
 name = "themed-print"
 authors = [{name = "Yiheng-Yu", email = "yuyiheng1994@gmail.com"}]
 version = "0.1.0"
+description = "A small utility module built on top of rich for producing **colourful, prettified drop-in replacement of built-in print() function**."
+readme = 'README.md'
 requires-python = ">=3.11"
 dependencies = [
     "rich >= 14.0.0",

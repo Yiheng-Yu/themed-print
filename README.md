@@ -1,6 +1,6 @@
 # Rich Console Utilities
 
-A small utility module built on top of [Rich](https://github.com/Textualize/rich) for producing **colourful, readable, and structured console output**.
+A small utility module built on top of [Rich](https://github.com/Textualize/rich) for producing **colourful, prettified drop-in replacement of built-in print() function**.
 
 The main contens are:
 * A drop-in replacement for `print`
