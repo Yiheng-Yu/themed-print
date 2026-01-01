@@ -1,3 +1,5 @@
+LICENSE
+README.md
 pyproject.toml
 src/themed_print/__init__.py
 src/themed_print/config.py

@@ -3,7 +3,7 @@ Name: themed-print
 Version: 0.1.0
 Author-email: Yiheng-Yu <yuyiheng1994@gmail.com>
 Requires-Python: >=3.11
+License-File: LICENSE
 Requires-Dist: rich>=14.0.0
 Requires-Dist: requests
-Provides-Extra: dev
-Requires-Dist: pytest; extra == "dev"
+Dynamic: license-file
