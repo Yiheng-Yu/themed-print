@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: themed-print
-Version: 0.1.0
+Version: 0.1.1
 Summary: A small utility module built on top of rich for producing **colourful, prettified drop-in replacement of built-in print() function**.
 Author-email: Yiheng-Yu <yuyiheng1994@gmail.com>
 Requires-Python: >=3.11
