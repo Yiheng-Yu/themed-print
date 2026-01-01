@@ -22,8 +22,6 @@ pip install themed-print
 
 ## Usage
 
-***
-
 ### Pretty Print (Drop-in Replacement)
 
 ```python
@@ -51,8 +49,6 @@ Arguments:
 | `show_guideline` | bool | Show indentation guides  |
 | `sep`            | str  | Separator between values |
 | `end`            | str  | Line ending              |
-
-***
 
 ### Status Spinner Decorator
 
