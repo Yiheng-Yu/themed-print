@@ -1,13 +1,12 @@
 # Rich Console Utilities
 
-A small utility module built on top of [Rich](https://github.com/Textualize/rich) for producing **colourful, readable, and structured console output**.
+A small utility module built on top of [Rich](https://github.com/Textualize/rich) for producing **colourful, prettified drop-in replacement of built-in print() function**.
 
 The main contens are:
 * A drop-in replacement for `print`
 * A decorator for running functions with a spinner/status indicator like ```npm```
 
 ***
----
 
 ## Installation
 
@@ -23,6 +22,8 @@ pip install themed-print
 ## Usage
 
 ### Pretty Print (Drop-in Replacement)
+
+themed_print.print can be used as a drop-in replacement for the built-in print() function
 
 ```python
 from themed_print import print

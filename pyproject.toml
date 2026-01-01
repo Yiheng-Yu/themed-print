@@ -1,9 +1,19 @@
 [project]
 name = "themed-print"
 authors = [{name = "Yiheng-Yu", email = "yuyiheng1994@gmail.com"}]
-version = "0.1.0"
+version = "0.1.2"
+description = "A small utility module built on top of rich for producing **colourful, prettified drop-in replacement of built-in print() function**."
+readme = 'README.md'
 requires-python = ">=3.11"
 dependencies = [
     "rich >= 14.0.0",
     "requests"
 ]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/Yiheng-Yu/themed-print"
+Issues = "https://github.com/Yiheng-Yu/themed-print/issues"
