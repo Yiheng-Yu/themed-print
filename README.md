@@ -7,7 +7,6 @@ The main contens are:
 * A decorator for running functions with a spinner/status indicator like ```npm```
 
 ***
----
 
 ## Installation
 
@@ -23,6 +22,8 @@ pip install themed-print
 ## Usage
 
 ### Pretty Print (Drop-in Replacement)
+
+themed_print.print can be used as a drop-in replacement for the built-in print() function
 
 ```python
 from themed_print import print
